@@ -16,12 +16,13 @@ window.addEventListener('load', () => {
         const os = appsForm.get('os');
         apps.forEach(function (currentValue) {
             let path = '';
+            const currentValueClean = currentValue.replace(' ', '');
 
             if (os === 'IOS') {
-                path = 'https://itunes.apple.com/us/app/id' + currentValue + '?mt=8';
+                path = 'https://itunes.apple.com/us/app/id' + currentValueClean + '?mt=8';
 
             } else {
-                path = 'https://play.google.com/store/apps/details?id=' + currentValue + '&hl=en';
+                path = 'https://play.google.com/store/apps/details?id=' + currentValueClean + '&hl=en';
             }
             openInStore(path)
 
